@@ -55,6 +55,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>58cbe3dc-16f1-4a9b-bd4d-21ef9a0434a3</ProjectGuid>
+    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0'">
@@ -85,17 +86,20 @@
       <UserProperties />
     </VisualStudio>
   </ProjectExtensions>
-  <ItemGroup >
+  <ItemGroup>
     <ProjectCapability Include="UseFileGlobs" />
   </ItemGroup>
-  <PropertyGroup >
+  <PropertyGroup>
     <!-- Customize which folders are not shown by default -->
     <ExcludedItems>bin;bld;platforms;node_modules;simulation</ExcludedItems>
   </PropertyGroup>
-  <ItemGroup >
+  <ItemGroup>
     <Content Include="**\**" Exclude="**\platforms\**;**\bin\**;**\bld\**;**\node_modules\**;**\simulation\**;.gitignore;Vetero.*" />
   </ItemGroup>
-  <ItemGroup >
+  <ItemGroup>
+    <Content Include="src\providers\weather.ts" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Update="config.xml">
       <SubType>Designer</SubType>
     </Content>

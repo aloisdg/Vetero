@@ -1,4 +1,4 @@
-<ion-header>
+<!--<ion-header>
   <ion-navbar>
     <ion-title>
       Ionic Blank
@@ -8,7 +8,7 @@
 
 <ion-content class="home" padding>
 
-    <h2 class="center">Ionic 2 - Blank Starter</h2> 
+    <h2 class="center">Ionic 2 - Blank Starter</h2>
 
     <div class="center">
         <p class="ionic-logo"></p>
@@ -45,7 +45,76 @@
                 Troubleshooting
             </button>
         </ion-list>
-        
     </ion-card>
 
+</ion-content>-->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons right>
+      <button ion-button (click)="refreshPage()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      Vetero
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <!--<ion-list no-lines>
+    <ion-item [hidden]="c_items.length > 0">
+      <p><strong>Weather data is not available</strong></p>
+    </ion-item>
+    <ion-item *ngFor="let c_item of c_items">
+      <p><strong>{{c_item.name}}:</strong> {{c_item.value}}</p>
+    </ion-item>
+  </ion-list>-->
+  <ion-segment [(ngModel)]="displayMode">
+    <ion-segment-button value="current" (ionSelect)="showCurrent()">
+      Current
+    </ion-segment-button>
+    <ion-segment-button value="forecast" (ionSelect)="showForecast()">
+      Forecast
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="displayMode">
+    <ion-list no-lines *ngSwitchCase="'current'">
+      <!--show this if there are no items in the list-->
+      <ion-item [hidden]="c_items.length > 0">
+        <p><strong>Weather data is not available</strong></p>
+      </ion-item>
+      <!--Display the current conditions data we have -->
+      <ion-item *ngFor="let c_item of c_items">
+        <p><strong>{{c_item.name}}:</strong> {{c_item.value}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-list inset *ngSwitchCase="'forecast'">
+      <ion-item text-wrap>
+        {{ f_items.length ? 'Tap an item to view the forecast for the selected period.': 'Forecast data is not available at this time.' }}
+      </ion-item>
+      <button detail-push ion-item *ngFor="let item of f_items" (click)="viewForecast(item)">
+        <ion-icon name="time" item-left></ion-icon>
+        {{item.period}}
+      </button>
+    </ion-list>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <form (ngSubmit)="setZipCode()">
+    <ion-item>
+      <ion-label>Type your zip code:</ion-label>
+      <ion-input type="text" [(ngModel)]="searchInput" name="ZipCode"></ion-input>
+    </ion-item>
+    <button ion-button icon-left block>
+      <ion-icon name="search"></ion-icon>
+      Find Weather
+    </button>
+  </form>
+</ion-footer>
+
+<!--<ion-footer>
+  <ion-toolbar>
+    <ion-title>Visual Studio Tools for Apache Cordova</ion-title>
+  </ion-toolbar>
+</ion-footer>-->
