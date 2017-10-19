@@ -1,5 +1,4 @@
-# Vetero
-
+![logo](https://raw.githubusercontent.com/aloisdg/Vetero/master/Assets/vetero.png)
 Vetero is a Ionic2 based mobile webapp
 
 ## Stack
