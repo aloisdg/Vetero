@@ -25,3 +25,4 @@ Vetero is a Ionic2 based mobile webapp
 
 * Code: MPL2
 * Logo: CC0
+* Logo's Font: Barbershop in Thailand by Octotype
