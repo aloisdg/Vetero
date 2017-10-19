@@ -1,5 +1,6 @@
 ![logo](https://raw.githubusercontent.com/aloisdg/Vetero/master/Assets/vetero.png)
-Vetero is a Ionic2 based mobile webapp
+
+Vetero is a Ionic2 based mobile webapp made for Mobile Hybrid Course.
 
 ## Stack
 
@@ -9,6 +10,7 @@ Vetero is a Ionic2 based mobile webapp
 
 ### Techno
 
+* Cordova
 * Ionic2
 * Angular2
 * Rxjs
