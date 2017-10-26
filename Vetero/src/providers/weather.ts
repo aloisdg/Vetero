@@ -43,7 +43,7 @@ export class Weather {
             uri += '?lat=' + loc.lat + '&lon=' + loc.long;
         } else {
             //Otherwise, use the zip code
-            uri += '?zip=' + loc.zip;
+            uri += '?zip=' + loc.zip+ ",fr";
         }
 
         uri += '&units=metric';
