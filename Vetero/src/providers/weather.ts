@@ -36,13 +36,9 @@ export class Weather {
     private makeDataURL(loc: any, command: string): string {
         let uri = this.weatherEndpoint + command;
 
-        //uri += "?lat=" + 48.8534100 + '&lon=' + 2.3488000;
-        //Do we have a location?
         if (loc.long) {
-            //then use the 'geographical coordinates' version of the API
             uri += '?lat=' + loc.lat + '&lon=' + loc.long;
         } else {
-            //Otherwise, use the zip code
             uri += '?zip=' + loc.zip+ ",fr";
         }
 
@@ -55,7 +51,6 @@ export class Weather {
     //'Borrowed' from //https://angular.io/docs/ts/latest/guide/server-communication.html
     private extractData(res: Response) {
         let body = res.json();
-        //Return the data (or nothing)
         return body || {};
     }
 
