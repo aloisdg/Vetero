@@ -1,53 +1,3 @@
-<!--<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content class="home" padding>
-
-    <h2 class="center">Ionic 2 - Blank Starter</h2>
-
-    <div class="center">
-        <p class="ionic-logo"></p>
-    </div>
-
-    <ion-card>
-        <ion-card-header>
-            Docs are here to help you
-        </ion-card-header>
-
-        <ion-list>
-            <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820516')">
-                <ion-icon name="jet" item-left></ion-icon>
-                Getting Started
-            </button>
-
-            <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820761')">
-                <ion-icon name="ionic" item-left></ion-icon>
-                Ionic Framework
-            </button>
-
-            <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820520')">
-                <ion-icon name="thunderstorm" item-left></ion-icon>
-                Azure Services
-            </button>
-
-            <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820524')">
-                <ion-icon name="cafe" item-left></ion-icon>
-                Plugins Support
-            </button>
-
-            <button ion-item (click)="onLink('http://go.microsoft.com/fwlink/?LinkID=820526')">
-                <ion-icon name="paw" item-left></ion-icon>
-                Troubleshooting
-            </button>
-        </ion-list>
-    </ion-card>
-
-</ion-content>-->
 <ion-header>
   <ion-toolbar>
     <ion-buttons right>
@@ -61,14 +11,6 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <!--<ion-list no-lines>
-    <ion-item [hidden]="c_items.length > 0">
-      <p><strong>Weather data is not available</strong></p>
-    </ion-item>
-    <ion-item *ngFor="let c_item of c_items">
-      <p><strong>{{c_item.name}}:</strong> {{c_item.value}}</p>
-    </ion-item>
-  </ion-list>-->
   <ion-segment [(ngModel)]="displayMode">
     <ion-segment-button value="current" (ionSelect)="showCurrent()">
       Current
@@ -79,12 +21,10 @@
   </ion-segment>
   <div [ngSwitch]="displayMode">
     <ion-list no-lines *ngSwitchCase="'current'">
-      <!--show this if there are no items in the list-->
-      <ion-item [hidden]="c_items.length > 0">
+      <ion-item [hidden]="currentWeatherItems.length > 0">
         <p><strong>Weather data is not available</strong></p>
       </ion-item>
-      <!--Display the current conditions data we have -->
-      <ion-item *ngFor="let c_item of c_items">
+      <ion-item *ngFor="let currentWeatherItems of currentWeatherItems">
         <p><strong>{{c_item.name}}:</strong> {{c_item.value}}</p>
       </ion-item>
     </ion-list>
@@ -94,6 +34,7 @@
       </ion-item>
       <button detail-push ion-item *ngFor="let item of f_items" (click)="viewForecast(item)">
         <ion-icon name="time" item-left></ion-icon>
+        <!--<img ng-src="http://openweathermap.org/img/w/{{item.icon}}.png" item-left/>-->
         {{item.period}}
       </button>
     </ion-list>
@@ -112,9 +53,3 @@
     </button>
   </form>
 </ion-footer>
-
-<!--<ion-footer>
-  <ion-toolbar>
-    <ion-title>Visual Studio Tools for Apache Cordova</ion-title>
-  </ion-toolbar>
-</ion-footer>-->

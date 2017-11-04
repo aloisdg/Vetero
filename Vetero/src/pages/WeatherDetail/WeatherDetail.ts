@@ -10,7 +10,6 @@ export class WeatherDetailPage {
     forecast: any;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-        //Pull the selected forecast off of navParams
         this.forecast = this.navParams.get('forecast');
     }
 
