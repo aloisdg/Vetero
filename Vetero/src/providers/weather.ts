@@ -45,7 +45,6 @@ export class Weather {
     //'Borrowed' from //https://angular.io/docs/ts/latest/guide/server-communication.html
     private extractData(res: Response) {
         let body = res.json();
-        //Return the data (or nothing)
         return body || {};
     }
 

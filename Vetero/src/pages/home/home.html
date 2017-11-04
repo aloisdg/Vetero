@@ -11,7 +11,6 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-
   <ion-segment [(ngModel)]="displayMode">
     <ion-segment-button value="current" (ionSelect)="showCurrent()">
       Current
@@ -35,6 +34,7 @@
       </ion-item>
       <button detail-push ion-item *ngFor="let item of f_items" (click)="viewForecast(item)">
         <ion-icon name="time" item-left></ion-icon>
+        <!--<img ng-src="http://openweathermap.org/img/w/{{item.icon}}.png" item-left/>-->
         {{item.period}}
       </button>
     </ion-list>

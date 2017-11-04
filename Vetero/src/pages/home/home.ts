@@ -9,7 +9,6 @@ import { WeatherDetailPage } from '../weatherdetail/weatherdetail';
     templateUrl: 'home.html'
 })
 export class HomePage {
-
     degreeStr: string = ' degrees (C)';
     currentLoc: any = {};
     c_items: Array<any> = [];
@@ -95,9 +94,9 @@ export class HomePage {
         if (data.name) {
             tmpArray.push({ 'name': 'Location', 'value': data.name });
         }
-        tmpArray.push({ 'name': 'Temperature', 'value': data.main.temp + this.degreeStr });
-        tmpArray.push({ 'name': 'Low', 'value': data.main.temp_min + this.degreeStr });
-        tmpArray.push({ 'name': 'High', 'value': data.main.temp_max + this.degreeStr });
+        tmpArray.push({ 'name': '🌡 ', 'value': data.main.temp + this.degreeStr });
+        tmpArray.push({ 'name': '🌡↓', 'value': data.main.temp_min + this.degreeStr });
+        tmpArray.push({ 'name': '🌡↑', 'value': data.main.temp_max + this.degreeStr });
         tmpArray.push({ 'name': 'Humidity', 'value': data.main.humidity + '%' });
         tmpArray.push({ 'name': 'Pressure', 'value': data.main.pressure + ' hPa' });
         tmpArray.push({ 'name': 'Wind', 'value': data.wind.speed + ' mph' });
@@ -106,11 +105,11 @@ export class HomePage {
         }
         if (data.sys.sunrise) {
             var sunriseDate = new Date(data.sys.sunrise * 1000);
-            tmpArray.push({ 'name': 'Sunrise', 'value': sunriseDate.toLocaleTimeString() });
+            tmpArray.push({ 'name': '🌅 Sunrise', 'value': sunriseDate.toLocaleTimeString() });
         }
         if (data.sys.sunset) {
             var sunsetDate = new Date(data.sys.sunset * 1000);
-            tmpArray.push({ 'name': 'Sunset', 'value': sunsetDate.toLocaleTimeString() });
+            tmpArray.push({ 'name': '🌇 Sunset', 'value': sunsetDate.toLocaleTimeString() });
         }
         if (data.coord) {
             tmpArray.push({ 'name': 'Latitude', 'value': data.coord.lat });
