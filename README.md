@@ -4,9 +4,19 @@ Vetero is a Ionic2 based mobile webapp made for Mobile Hybrid Course.
 
 ## Stack
 
-### Data
+### Feature
+
+* API access by homemade provider
+* Detail list for forecast
+* Geolocation plugin
+* Custom icon
+* Reactivity with Rxjs
+* Handle bad connection
+
+### Backend
 
 * OpenWeatherAPI
+* No tracking outside of the api
 
 ### Techno
 
