@@ -39,7 +39,8 @@ export class Weather {
         if (loc.long) {
             uri += '?lat=' + loc.lat + '&lon=' + loc.long;
         } else {
-            uri += '?zip=' + loc.zip+ ",fr";
+            //Otherwise, use the zip code
+            uri += '?zip=' + loc.zip + ",fr";
         }
 
         uri += '&units=metric';
