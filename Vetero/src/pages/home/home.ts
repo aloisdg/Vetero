@@ -9,9 +9,9 @@ import { WeatherDetailPage } from '../weatherdetail/weatherdetail';
     templateUrl: 'home.html'
 })
 export class HomePage {
-    degreeStr: string = ' ℃';
+    degreeStr: string = ' degrees (C)';
     currentLoc: any = {};
-    currentWeatherItems: Array<any> = [];
+    c_items: Array<any> = [];
     searchInput: string = '';
     currentMode: string = 'current';
     displayMode: string = this.currentMode;
@@ -66,7 +66,7 @@ export class HomePage {
     }
 
     showCurrent() {
-        this.currentWeatherItems = [];
+        this.c_items = [];
         let loader = this.loadingCtrl.create({
             content: "Retrieving current conditions..."
         });
@@ -75,7 +75,7 @@ export class HomePage {
             data => {
                 loader.dismiss();
                 if (data) {
-                    this.currentWeatherItems = this.formatWeatherData(data);
+                    this.c_items = this.formatWeatherData(data);
                 } else {
                     console.error('Error retrieving weather data: Data object is empty');
                 }
@@ -129,7 +129,6 @@ export class HomePage {
     }
 
     setZipCode() {
-        //Hide the keyboard if it's open, just in case
         Keyboard.close();
         this.currentLoc = { 'zip': this.searchInput };
         this.searchInput = '';
@@ -149,10 +148,10 @@ export class HomePage {
                 if (data) {
                     for (let period of data.list) {
                         let weatherValues: any = this.formatWeatherData(period);
-                        let date = new Date(period.dt_txt);
-                        let day = this.days[date.getDay()];
-                        let time = date.toLocaleTimeString();
-                        this.f_items.push({ 'period': day + ' at ' + time, 'values': weatherValues });
+                        let d = new Date(period.dt_txt);
+                        let day = this.days[d.getDay()];
+                        let tm = d.toLocaleTimeString();
+                        this.f_items.push({ 'period': day + ' at ' + tm, 'values': weatherValues });
                     }
                 } else {
                     console.error('Error displaying weather data: Data object is empty');

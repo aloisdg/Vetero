@@ -21,10 +21,10 @@
   </ion-segment>
   <div [ngSwitch]="displayMode">
     <ion-list no-lines *ngSwitchCase="'current'">
-      <ion-item [hidden]="currentWeatherItems.length > 0">
+      <ion-item [hidden]="c_items.length > 0">
         <p><strong>Weather data is not available</strong></p>
       </ion-item>
-      <ion-item *ngFor="let currentWeatherItems of currentWeatherItems">
+      <ion-item *ngFor="let c_item of c_items">
         <p><strong>{{c_item.name}}:</strong> {{c_item.value}}</p>
       </ion-item>
     </ion-list>
@@ -45,7 +45,7 @@
   <form (ngSubmit)="setZipCode()">
     <ion-item>
       <ion-label>Type your zip code:</ion-label>
-      <ion-input type="text" [(ngModel)]="searchInput" name="ZipCode"></ion-input>
+      <ion-input type="number" [(ngModel)]="searchInput" name="ZipCode"></ion-input>
     </ion-item>
     <button ion-button icon-left block>
       <ion-icon name="search"></ion-icon>

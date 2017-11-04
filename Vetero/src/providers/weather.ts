@@ -3,12 +3,6 @@ import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-/*
-  Generated class for the Weather provider.
-
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class Weather {
 
@@ -39,7 +33,6 @@ export class Weather {
         if (loc.long) {
             uri += '?lat=' + loc.lat + '&lon=' + loc.long;
         } else {
-            //Otherwise, use the zip code
             uri += '?zip=' + loc.zip + ",fr";
         }
 
