@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="io.cordova.myapp417283" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" xmlns:cdv="http://cordova.apache.org/ns/1.0" defaultLocale="en-US">
+<widget id="io.cordova.vetero" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" xmlns:cdv="http://cordova.apache.org/ns/1.0" defaultLocale="en-US">
   <name>Vetero</name>
-  <description>Vetero is a Ionic2 based mobile webapp </description>
+  <description>Vetero is a Ionic2 based mobile weather webapp </description>
   <author email="alois@outlook.fr" href="https://github.com/aloisdg/">aloisdg</author>
   <content src="index.html" />
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
   <vs:template-name>Ionic 2 Blank</vs:template-name>
-  <access origin="*" />
+  <access origin="http://api.openweathermap.org" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
   <allow-intent href="tel:*" />
